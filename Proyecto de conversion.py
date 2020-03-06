@@ -27,13 +27,11 @@ def ConvertirABase(n,b,c):
 def ConvertirABaseDiez(n,b,c,d):
     if b<2 or b>9:
         return "Base inválida"
-    if cd(n)>9:
-
     if n<10:
-        return c+(n*b**cd(n-1))
+        return c+n*b**cd(n)
     else:
         return ConvertirABaseDiez(n//10,b,c+(n%10)*b**(cd(n)-(cd(n)-d)),d+1)
-print (ConvertirABaseDiez(32,4,0,0))
-print (ConvertirABase(28,7,0))
+print (ConvertirABaseDiez(13,7,0,0))
+print (ConvertirABase(37,3,0))
 
 
