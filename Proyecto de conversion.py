@@ -10,13 +10,12 @@ def cd(n):
     else:
         return 1+cd(n//10)
 
-'''
-assert ConvertirABase(n,b==0,c)
-assert ConvertirABase(n,b>9,c)
-assert ConvertirABase(n,b<2,c) 
-'''
 
 def ConvertirABase(n,b,c):
+    if b==0:
+        return "Base inválida"
+    if b<2 or b>9:
+        return "Base inválida"
     if n==b:
         return 10
     else:
@@ -25,19 +24,16 @@ def ConvertirABase(n,b,c):
         else:
             return (inversion(c*10+n))
     
-'''
-assert b>9, "error"
-assert b<2, "error"
-assert n>=b, "error"
-'''
-
 def ConvertirABaseDiez(n,b,c,d):
+    if b<2 or b>9:
+        return "Base inválida"
+    if cd(n)>9:
+
     if n<10:
         return c+(n*b**cd(n-1))
     else:
         return ConvertirABaseDiez(n//10,b,c+(n%10)*b**(cd(n)-(cd(n)-d)),d+1)
-
 print (ConvertirABaseDiez(32,4,0,0))
-print (ConvertirABase(14,4,0))
+print (ConvertirABase(28,7,0))
 
 
